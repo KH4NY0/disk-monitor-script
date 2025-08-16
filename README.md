@@ -11,7 +11,7 @@ A simple Bash script that checks your system's disk space usage and alerts if it
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/disk-space-monitor.git
+git clone https://github.com/KH4NY0/disk-space-monitor.git
 cd disk-space-monitor
 chmod +x check_disk.sh
 ```
