@@ -44,3 +44,9 @@ chmod +x check_disk.sh
 0 2 * * * /path/to/backup.sh >> /var/log/backup_cron.log 2>&1
 ```
 
+## Output
+<p align="center">
+  <img src="images/monitor-script-example.PNG" alt="Sample backup output" width="600">
+</p>
+
+
