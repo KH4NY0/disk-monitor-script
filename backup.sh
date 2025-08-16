@@ -31,6 +31,15 @@ if ! flock -n 9; then
   exit 1
 fi
 
+USAGE=$(df --output=pcent / | tail -1 | tr -dc '0-9')
+if (( USAGE > 80 )); then
+    log "Disk usage is at ${USAGE}%, exceeding threshold. Triggering backup."
+else
+    log "Disk usage is at ${USAGE}%, below threshold. Skipping backup."
+    exit 0
+fi
+
+
 # Cleanup on exit
 TMPDIR="$(mktemp -d)"
 trap 'rc=$?; rm -rf "$TMPDIR"; flock -u 9; exit $rc' EXIT
